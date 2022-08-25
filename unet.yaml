@@ -1,0 +1,9 @@
+# Parameters for UNet model
+# Descriptions of parameters can be found in src.unet.unet.py
+
+channel_arr: [64, 128, 256, 512, 1024]
+block_arr: [2, 2, 2, 2, 2]
+attn_arr: [[False, 0], [True, 1], [False, 0], [False, 0], [False, 0]]
+embed_dim: 256
+timesteps: 1000
+dropout: 0.1
