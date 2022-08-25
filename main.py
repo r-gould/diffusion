@@ -28,7 +28,7 @@ def main(unet_params, batch_size, max_lr, warmup_steps, epochs,
     model = Diffusion(network, device).to(device)
 
     if load_model:
-        model.load_state_dict(torch.load("diffusion/saved/diffusion.pt"))
+        model.load_state_dict(torch.load("saved/diffusion.pt"))
 
     optim = torch.optim.Adam(model.parameters(), lr=max_lr)
     warmup_func = lambda step: min(1, step / warmup_steps)
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    with open("diffusion/unet.yaml", "r") as stream:
+    with open("unet.yaml", "r") as stream:
         unet_params = yaml.safe_load(stream)
 
     batch_size = 128
