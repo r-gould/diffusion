@@ -43,7 +43,7 @@ class Trainer:
 
             if save_model:
                 print("Saving model...")
-                torch.save(model.state_dict(), f"diffusion/saved/diffusion_{epoch}.pt")
+                torch.save(model.state_dict(), f"saved/diffusion_{epoch}.pt")
                 print("Model saved")
             
             if sample_count > 0:
